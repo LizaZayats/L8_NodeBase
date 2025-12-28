@@ -1,0 +1,31 @@
+{
+  "name": "l8-nodebase",
+  "version": "1.0.0",
+  "description": "Лабораторная работа 8",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "set NODE_ENV=development && node -r dotenv/config index.js",
+    "build": "set NODE_ENV=production && node -e \"console.log('Build completed for production')\"",
+
+    "deploy": "set NODE_ENV=production && node -e \"console.log('Deploy to production')\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "os": "node os/index.js",
+    "bcrypt": "node bcrypt-test.js",
+    "fs-sync": "node fs-tasks/sync.js",
+    "fs-async": "node fs-tasks/async.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "typescript": "^5.9.3",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
