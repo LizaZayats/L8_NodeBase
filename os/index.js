@@ -1,10 +1,8 @@
 const os = require('os');
 const path = require('path');
 
-// Загружаем .env из родительской папки
 require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 
-// a) Функция вывода основной информации
 function getOSInfo() {
     console.log('\nИнформация об ОС');
     console.log('Платформа:', os.platform());
@@ -26,7 +24,6 @@ function getOSInfo() {
     });
 }
 
-// b) Проверка свободной памяти (> 4GB)
 function checkMemory() {
     const freeMemGB = os.freemem() / 1024 / 1024 / 1024;
     console.log(`\nСвободная память: ${freeMemGB.toFixed(2)} GB`);
@@ -40,9 +37,8 @@ function checkMemory() {
     }
 }
 
-// c) Функция с проверкой доступа
 function getOSInfoIfAllowed() {
-    const mode = process.env.ACCESS_MODE; // Используем ACCESS_MODE из .env
+    const mode = process.env.ACCESS_MODE; 
     console.log(`\nТекущий режим доступа: ${mode}`);
     
     if (mode === 'admin' || mode === 'user') {
@@ -54,14 +50,12 @@ function getOSInfoIfAllowed() {
     }
 }
 
-// Экспорт функций
 module.exports = {
     getOSInfo,
     checkMemory,
     getOSInfoIfAllowed
 };
 
-// Если файл запускается напрямую
 if (require.main === module) {
     getOSInfoIfAllowed();
 }
