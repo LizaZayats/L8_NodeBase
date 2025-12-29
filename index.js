@@ -1,10 +1,7 @@
-// Загружаем переменные окружения
 require('dotenv').config({
     path: process.env.NODE_ENV === 'production' ? '.env.production' :
           process.env.NODE_ENV === 'domain' ? '.env.domain' : '.env.development'
 });
-
-// Вывод информации
 console.log('1. Информация из .env:');
 console.log('   Имя:', process.env.NAME || 'Не указано');
 console.log('   Фамилия:', process.env.SURNAME || 'Не указано');
@@ -12,8 +9,6 @@ console.log('   Группа:', process.env.GROUP || 'Не указано');
 console.log('   Номер:', process.env.NUMBER_IN_LIST || 'Не указано');
 console.log('   Режим:', process.env.ACCESS_MODE || 'development');
 console.log();
-
-// Меню для тестирования
 console.log('2. Доступные команды:');
 console.log('   npm start     - запуск в режиме development');
 console.log('   npm run build - запуск в режиме production');
