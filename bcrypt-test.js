@@ -19,7 +19,6 @@ async function hashPasswords() {
         console.log(`  Время: ${time}ms`);
     }
     
-    // Анализ времени
     console.log('\nАнализ времени');
     console.log('Минимальное время:', Math.min(...times), 'ms');
     console.log('Максимальное время:', Math.max(...times), 'ms');
